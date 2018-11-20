@@ -4,6 +4,8 @@
     <style type="text/css">
         label.red{
             color: #FF0000;}
+        label.green{
+            color: #007700;}
         label.black{
             color: #000000;
         }
@@ -59,22 +61,23 @@ while ($row=$result->fetch_row())
     echo <<<EOF
     <span style="line-height:24px;">
     <h3>$index.$row[1]</h3>
-    <input type="radio" name="$radioname" value=$valueA onclick="getValue($labelanswerID,$labelnoteID,this.value,'$row[7]')">A.$row[3]<br>
-    <input type="radio" name="$radioname" value=$valueB onclick="getValue($labelanswerID,$labelnoteID,this.value,'$row[7]')">B.$row[4]<br>
-    <input type="radio" name="$radioname" value=$valueC onclick="getValue($labelanswerID,$labelnoteID,this.value,'$row[7]')">C.$row[5]<br>
-    <input type="radio" name="$radioname" value=$valueD onclick="getValue($labelanswerID,$labelnoteID,this.value,'$row[7]')">D.$row[6]<br>
-    <label id="$labelanswerID" class="hide">答案：$row[2]</label><br>
-    <label id="$labelnoteID"  class="black"></label><br>
+    <label style="font-size: 12pt"><input type="radio" name="$radioname" value=$valueA onclick="getValue($labelanswerID,$labelnoteID,this.value,'$row[7]')">A.$row[3]</label><br>
+    <label style="font-size: 12pt"><input type="radio" name="$radioname" value=$valueB onclick="getValue($labelanswerID,$labelnoteID,this.value,'$row[7]')">B.$row[4]</label><br>
+    <label style="font-size: 12pt"><input type="radio" name="$radioname" value=$valueC onclick="getValue($labelanswerID,$labelnoteID,this.value,'$row[7]')">C.$row[5]</label><br>
+    <label style="font-size: 12pt"><input type="radio" name="$radioname" value=$valueD onclick="getValue($labelanswerID,$labelnoteID,this.value,'$row[7]')">D.$row[6]</label><br>
+    <label id="$labelanswerID" class="hide" style="font-size: 12pt">答案：$row[2]</label><br>
+    <label id="$labelnoteID"  class="black" style="font-size: 12pt"></label><br>
     </span>
 EOF;
     $index++;
 }
 ?>
+    <HR><input type="submit" id="id_submit" name="the_submit" value="再出题" style="width:200px;height:60px; font-size: 30px" />
 <script>
     function getValue(labelid,labelnoteid,radiovalue,test){
         if(radiovalue == 1)
         {
-            labelid.className = "black";
+            labelid.className = "green";
         }
         else
         {
@@ -83,7 +86,7 @@ EOF;
         labelnoteid.textContent = test;
     }
 </script>
-    <input type="submit" id="id_submit" name="the_submit" value="再出题" style="width:200px;height:60px; font-size: 30px" />
+
 </form>
 </body>
 </html>
