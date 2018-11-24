@@ -1,3 +1,7 @@
+<?php
+header("Content-Type: text/html;charset=utf-8");
+?>
+
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -17,9 +21,7 @@
 
 <form action="" method="post">
 <?php
-header('Content-Type:text/html;charset=utf-8');
-//echo "1234";
-$dbhost = "localhost";
+$dbhost = "144.202.62.208";
 $username = "root";
 $userpass = "Lhy19850924";
 $dbdatabase = "exam";
@@ -29,12 +31,14 @@ if(mysqli_connect_error()){
     echo 'Could not connect to database.';
     exit;
 }
-
+$db->query('SET NAMES UTF8');
 $sql =  "SELECT * FROM pmp order by rand() limit 5;";
-mysql_query("SET NAMES UTF8");
 $result=$db->query($sql);
 $index = 1;
 $formname = "";
+
+
+
 
 static $row;
 while ($row=$result->fetch_row())

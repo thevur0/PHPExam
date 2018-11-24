@@ -19,7 +19,7 @@
 //echo "1234";
 $dbhost = "localhost";
 $username = "root";
-$userpass = "123456";
+$userpass = "Lhy19850924";
 $dbdatabase = "exam";
 
 $db=new mysqli($dbhost,$username,$userpass,$dbdatabase);
@@ -27,8 +27,7 @@ if(mysqli_connect_error()){
     echo 'Could not connect to database.';
     exit;
 }
-
-$sql =  "SELECT * FROM pmp order by rand() limit 5;";
+$sql =  "SELECT * FROM pmp1 order by rand() limit 5;";
 
 $result=$db->query($sql);
 $index = 1;
@@ -37,6 +36,7 @@ $formname = "";
 static $row;
 while ($row=$result->fetch_row())
 {
+
     $radioname = "radio".strval($index);
     $formname = "from".strval($index);
     $valueA = 0;
