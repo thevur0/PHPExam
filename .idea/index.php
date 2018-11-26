@@ -33,8 +33,8 @@ if(mysqli_connect_error()){
     echo 'Could not connect to database.';
     exit;
 }
-//$sql =  "SELECT * FROM pmp order by rand() limit 5;";
-$sql =  "SELECT * FROM pmp where ID = 1023;";
+$sql =  "SELECT * FROM pmp order by rand() limit 5;";
+//$sql =  "SELECT * FROM pmp where ID = 1023;";
 $result=$db->query($sql);
 $index = 1;
 $formname = "";
