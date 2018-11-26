@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="882c1c18-d537-4620-9b47-d560cd6f2bab" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pmp.php" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pmp.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pmp.xls" beforeDir="false" afterPath="$PROJECT_DIR$/pmp.xls" afterDir="false" />
     </list>
@@ -18,53 +19,78 @@
         <counts>
           <entry key="project.closed" value="2" />
           <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="1" />
-          <entry key="php" value="3" />
+          <entry key="php" value="4" />
+          <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="1" />
-          <entry key="PHP" value="3" />
+          <entry key="PHP" value="4" />
+          <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="53" />
-          <entry key="php" value="2063" />
+          <entry key="php" value="2424" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="73" />
-          <entry key="PHP" value="2043" />
+          <entry key="PHP" value="2404" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/Index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+            <state relative-caret-position="152">
+              <caret line="65" column="4" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="38" />
               <folding>
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#0;n#span#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#1;n#span#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#2;n#span#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#3;n#span#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#4;n#span#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#5;n#span#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/pmp.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="703">
+              <caret line="79" column="150" selection-start-line="79" selection-start-column="150" selection-end-line="79" selection-end-column="150" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -96,6 +122,7 @@
         <option value="$PROJECT_DIR$/.idea/Index1.php" />
         <option value="$PROJECT_DIR$/.idea/Test.html" />
         <option value="$PROJECT_DIR$/.idea/Index.php" />
+        <option value="$PROJECT_DIR$/.idea/pmp.php" />
       </list>
     </option>
   </component>
@@ -189,11 +216,13 @@
       <workItem from="1541517653105" duration="4645000" />
       <workItem from="1541604068980" duration="19024000" />
       <workItem from="1542723500431" duration="1669000" />
+      <workItem from="1542985096135" duration="772000" />
+      <workItem from="1543027430940" duration="13211000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25338000" />
+    <option name="totallyTimeSpent" value="39321000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -208,12 +237,12 @@
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1363275" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13831478" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" x="615" y="850" width="1340" height="286" id="Run" order="2" weight="0.34642032" />
+      <window_info active="true" anchor="bottom" x="615" y="850" width="1340" height="286" id="Run" order="2" visible="true" weight="0.34633386" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3995381" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -237,26 +266,43 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.idea/Test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/Index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+        <state relative-caret-position="152">
+          <caret line="65" column="4" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="38" />
           <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#1;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#2;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#3;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#4;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#5;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/Test.html">
+    <entry file="file://$PROJECT_DIR$/.idea/pmp.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        <state relative-caret-position="703">
+          <caret line="79" column="150" selection-start-line="79" selection-start-column="150" selection-end-line="79" selection-end-column="150" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
