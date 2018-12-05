@@ -20,13 +20,20 @@ header("Content-Type: text/html;charset=utf-8");
 </head>
 <body>
 
-<form action="" method="post">
+
+
 <?php
 ini_set('display_errors',1);
 
 
-$questionid = $_POST['questionid'];
-
+$questionid = intval($_POST['questionid']);
+$nextid = intval($_POST['nextid']);
+print $_POST['nextid'];
+print $nextid;
+if ($nextid!=0)
+{
+    $questionid = $nextid;
+}
 //$dbhost = "144.202.62.208";
 $dbhost = "localhost";
 $username = "root";
@@ -39,12 +46,19 @@ if(mysqli_connect_error()){
     exit;
 }
 $db->query('SET NAMES UTF8');
-$sql =  "SELECT * FROM pmp where id = 2275 limit 5;";
+$sql =  "SELECT * FROM pmp where id > $questionid limit 5;";
 $result=$db->query($sql);
 $index = 1;
 $formname = "";
-
+$arra = $result->fetch_all();
+$nextid = $arra[4][0];
+echo <<<EOF
+    <form action="pmpex.php?nextid=$nextid" method="post">
+    <label style="font-size: 24px">请输入题号：</label>  <input type="number" name="questionid" value=$questionid style="width:160px;height:40px; font-size: 24px" />
+    <input type="submit" id="id_submit1" name="num_submit" value="出题" style="width:160px;height:40px; font-size: 24px" /><HR>
+EOF;
 static $row;
+$result->data_seek(0);
 while ($row=$result->fetch_row())
 {
     $radioname = "radio".strval($index);
@@ -74,7 +88,7 @@ while ($row=$result->fetch_row())
     $note =  str_replace("\r\n","",$note);
     echo <<<EOF
     <span style="line-height:24px;">
-    <h3>$index.$title</h3>
+    <h3>$row[0].$title</h3>
     <label style="font-size: 12pt"><input type="radio" name="$radioname" value=$valueA onclick="getValue($labelanswerID,$labelnoteID,this.value,'$note')">A.$row[3]</label><br>
     <label style="font-size: 12pt"><input type="radio" name="$radioname" value=$valueB onclick="getValue($labelanswerID,$labelnoteID,this.value,'$note')">B.$row[4]</label><br>
     <label style="font-size: 12pt"><input type="radio" name="$radioname" value=$valueC onclick="getValue($labelanswerID,$labelnoteID,this.value,'$note')">C.$row[5]</label><br>
@@ -85,8 +99,10 @@ while ($row=$result->fetch_row())
 EOF;
     $index++;
 }
+$result->free();
+$db->close();
 ?>
-    <HR><input type="submit" id="id_submit" name="the_submit" value="再出题" style="width:200px;height:60px; font-size: 30px" />
+    <HR><input type="submit" id="id_submit2" name="index_submit" value="再出题" style="width:200px;height:60px; font-size: 30px"  />
 <script>
     function getValue(labelid,labelnoteid,radiovalue,test){
         //alert(test);
@@ -107,6 +123,19 @@ EOF;
 </body>
 </html>
 <?php
+function NextPage($id){
+    print ('123');
+    $url = 'pmpex.php';
+    $post_data['questionid'] = $id;
+    foreach ( $post_data as $k => $v )
+    {
+        $o.= "$k=" . urlencode( $v ). "&" ;
+    }
+    $post_data = substr($o,0,-1);
+
+    $res = $this->request_post($url, $post_data);
+}
+
 function isMobile() {
     // 如果有HTTP_X_WAP_PROFILE则一定是移动设备
     if (isset($_SERVER['HTTP_X_WAP_PROFILE'])) {
