@@ -70,10 +70,12 @@ while ($row=$result->fetch_row())
         $valueD = 1;
 
     $note = htmlspecialchars($row[7]);
+    $title = nl2br($row[1],true);
+    $note =  str_replace("\r\n","",$note);
 
     echo <<<EOF
     <span style="line-height:24px;">
-    <h3>$index.$row[1]</h3>
+    <h3>$title</h3>
     <label style="font-size: 12pt"><input type="radio" name="$radioname" value=$valueA onclick="getValue($labelanswerID,$labelnoteID,this.value,'$note')">A.$row[3]</label><br>
     <label style="font-size: 12pt"><input type="radio" name="$radioname" value=$valueB onclick="getValue($labelanswerID,$labelnoteID,this.value,'$note')">B.$row[4]</label><br>
     <label style="font-size: 12pt"><input type="radio" name="$radioname" value=$valueC onclick="getValue($labelanswerID,$labelnoteID,this.value,'$note')">C.$row[5]</label><br>

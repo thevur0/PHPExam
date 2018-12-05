@@ -1,5 +1,10 @@
+<?php
+header("Content-Type: text/html;charset=utf-8");
+?>
+
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
     <title>PHP刷题</title>
     <style type="text/css">
@@ -18,11 +23,11 @@
 <form action="" method="post">
 <?php
 ini_set('display_errors',1);
-$isModble = isMobile();
-if ($isModble)
-{
-    //echo "手机";
-}
+
+
+$questionid = $_POST['questionid'];
+
+//$dbhost = "144.202.62.208";
 $dbhost = "localhost";
 $username = "root";
 $userpass = "Lhy19850924";
@@ -33,8 +38,8 @@ if(mysqli_connect_error()){
     echo 'Could not connect to database.';
     exit;
 }
-$sql =  "SELECT * FROM pmp order by rand() limit 5;";
-//$sql =  "SELECT * FROM pmp where ID = 1023;";
+$db->query('SET NAMES UTF8');
+$sql =  "SELECT * FROM pmp where id = 2275 limit 5;";
 $result=$db->query($sql);
 $index = 1;
 $formname = "";
@@ -63,12 +68,13 @@ while ($row=$result->fetch_row())
 
     if($row[2] == 'D')
         $valueD = 1;
+
     $note = htmlspecialchars($row[7]);
     $title = nl2br($row[1],true);
     $note =  str_replace("\r\n","",$note);
     echo <<<EOF
     <span style="line-height:24px;">
-    <h3>$title</h3>
+    <h3>$index.$title</h3>
     <label style="font-size: 12pt"><input type="radio" name="$radioname" value=$valueA onclick="getValue($labelanswerID,$labelnoteID,this.value,'$note')">A.$row[3]</label><br>
     <label style="font-size: 12pt"><input type="radio" name="$radioname" value=$valueB onclick="getValue($labelanswerID,$labelnoteID,this.value,'$note')">B.$row[4]</label><br>
     <label style="font-size: 12pt"><input type="radio" name="$radioname" value=$valueC onclick="getValue($labelanswerID,$labelnoteID,this.value,'$note')">C.$row[5]</label><br>
@@ -83,7 +89,7 @@ EOF;
     <HR><input type="submit" id="id_submit" name="the_submit" value="再出题" style="width:200px;height:60px; font-size: 30px" />
 <script>
     function getValue(labelid,labelnoteid,radiovalue,test){
-
+        //alert(test);
         if(radiovalue == 1)
         {
             labelid.className = "green";
@@ -97,9 +103,9 @@ EOF;
 </script>
 
 </form>
+
 </body>
 </html>
-
 <?php
 function isMobile() {
     // 如果有HTTP_X_WAP_PROFILE则一定是移动设备
