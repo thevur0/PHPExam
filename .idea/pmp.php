@@ -6,7 +6,7 @@ header("Content-Type: text/html;charset=utf-8");
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
-    <title>PHP刷题</title>
+    <title>PMP刷题</title>
     <style type="text/css">
         label.red{
             color: #FF0000;}
@@ -75,7 +75,7 @@ while ($row=$result->fetch_row())
 
     echo <<<EOF
     <span style="line-height:24px;">
-    <h3>$title</h3>
+    <h3>$index.$title</h3>
     <label style="font-size: 12pt"><input type="radio" name="$radioname" value=$valueA onclick="getValue($labelanswerID,$labelnoteID,this.value,'$note')">A.$row[3]</label><br>
     <label style="font-size: 12pt"><input type="radio" name="$radioname" value=$valueB onclick="getValue($labelanswerID,$labelnoteID,this.value,'$note')">B.$row[4]</label><br>
     <label style="font-size: 12pt"><input type="radio" name="$radioname" value=$valueC onclick="getValue($labelanswerID,$labelnoteID,this.value,'$note')">C.$row[5]</label><br>

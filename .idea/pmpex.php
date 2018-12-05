@@ -6,7 +6,7 @@ header("Content-Type: text/html;charset=utf-8");
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
-    <title>PHP刷题</title>
+    <title>PMP刷题</title>
     <style type="text/css">
         label.red{
             color: #FF0000;}
@@ -26,16 +26,14 @@ header("Content-Type: text/html;charset=utf-8");
 ini_set('display_errors',1);
 
 
-$questionid = intval($_POST['questionid']);
-$nextid = intval($_POST['nextid']);
-print $_POST['nextid'];
-print $nextid;
+$questionid = intval($_GET['questionid']);
+$nextid = intval($_GET['nextid']);
 if ($nextid!=0)
 {
     $questionid = $nextid;
 }
-//$dbhost = "144.202.62.208";
-$dbhost = "localhost";
+$dbhost = "144.202.62.208";
+//$dbhost = "localhost";
 $username = "root";
 $userpass = "Lhy19850924";
 $dbdatabase = "exam";
@@ -46,14 +44,15 @@ if(mysqli_connect_error()){
     exit;
 }
 $db->query('SET NAMES UTF8');
-$sql =  "SELECT * FROM pmp where id > $questionid limit 5;";
+$sql =  "SELECT * FROM pmp where id >= $questionid limit 5;";
 $result=$db->query($sql);
 $index = 1;
 $formname = "";
 $arra = $result->fetch_all();
 $nextid = $arra[4][0];
 echo <<<EOF
-    <form action="pmpex.php?nextid=$nextid" method="post">
+    <form action="pmpex.php" method="get">
+    <input type="hidden" name="nextid" value=$nextid/>
     <label style="font-size: 24px">请输入题号：</label>  <input type="number" name="questionid" value=$questionid style="width:160px;height:40px; font-size: 24px" />
     <input type="submit" id="id_submit1" name="num_submit" value="出题" style="width:160px;height:40px; font-size: 24px" /><HR>
 EOF;
@@ -102,7 +101,7 @@ EOF;
 $result->free();
 $db->close();
 ?>
-    <HR><input type="submit" id="id_submit2" name="index_submit" value="再出题" style="width:200px;height:60px; font-size: 30px"  />
+    <HR><input type="submit" id="id_submit2" name="index_submit" value="再出题" style="width:200px;height:60px; font-size: 30px" >
 <script>
     function getValue(labelid,labelnoteid,radiovalue,test){
         //alert(test);
@@ -124,7 +123,7 @@ $db->close();
 </html>
 <?php
 function NextPage($id){
-    print ('123');
+
     $url = 'pmpex.php';
     $post_data['questionid'] = $id;
     foreach ( $post_data as $k => $v )
