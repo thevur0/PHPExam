@@ -23,12 +23,16 @@ header("Content-Type: text/html;charset=utf-8");
 
 
 <?php
-ini_set('display_errors',1);
+//ini_set('display_errors',1);
 
 
 $questionid = intval($_GET['questionid']);
 $nextid = intval($_GET['nextid']);
-if ($nextid!=0)
+if($nextid == 0)
+{
+    $nextid=1000;
+}
+if ($questionid==0)
 {
     $questionid = $nextid;
 }
@@ -48,13 +52,16 @@ $sql =  "SELECT * FROM pmp where id >= $questionid limit 5;";
 $result=$db->query($sql);
 $index = 1;
 $formname = "";
-$arra = $result->fetch_all();
-$nextid = $arra[4][0];
+while( $arra = $result->fetch_row())
+{
+    $nextid = $arra[0]+1;
+}
+
 echo <<<EOF
     <form action="pmpex.php" method="get">
     <input type="hidden" name="nextid" value=$nextid/>
-    <label style="font-size: 24px">请输入题号：</label>  <input type="number" name="questionid" value=$questionid style="width:160px;height:40px; font-size: 24px" />
-    <input type="submit" id="id_submit1" name="num_submit" value="出题" style="width:160px;height:40px; font-size: 24px" /><HR>
+    <label style="font-size: 24px">题号：</label>  <input type="number" name="questionid" style="width:120px;height:40px; font-size: 24px" />
+    <input type="submit" id="id_submit1" name="num_submit" value="出题" style="width:120px;height:40px; font-size: 24px" /><HR>
 EOF;
 static $row;
 $result->data_seek(0);
