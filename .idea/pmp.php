@@ -28,7 +28,8 @@ if ($isModble)
 {
     //echo "手机";
 }
-$dbhost = "144.202.62.208";
+//$dbhost = "144.202.62.208";
+$dbhost = "localhost";
 $username = "root";
 $userpass = "Lhy19850924";
 $dbdatabase = "exam";

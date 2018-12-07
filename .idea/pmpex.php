@@ -36,8 +36,8 @@ if ($questionid==0)
 {
     $questionid = $nextid;
 }
-$dbhost = "144.202.62.208";
-//$dbhost = "localhost";
+//$dbhost = "144.202.62.208";
+$dbhost = "localhost";
 $username = "root";
 $userpass = "Lhy19850924";
 $dbdatabase = "exam";
