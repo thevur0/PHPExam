@@ -33,7 +33,7 @@ $dbhost = "localhost";
 $username = "root";
 $userpass = "Lhy19850924";
 $dbdatabase = "exam";
-$table = "pmp";
+$table = strval($_GET['type']);
 
 $db=new mysqli($dbhost,$username,$userpass,$dbdatabase);
 if(mysqli_connect_error()){
