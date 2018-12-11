@@ -6,7 +6,7 @@ header("Content-Type: text/html;charset=utf-8");
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
-    <title>PMP刷题</title>
+    <title>PMP练习</title>
     <style type="text/css">
         label.red{
             color: #FF0000;}
@@ -19,7 +19,7 @@ header("Content-Type: text/html;charset=utf-8");
     </style>
 </head>
 <body>
-
+<a href="./test.html">Home</a>
 <form action="" method="post">
 <?php
 //ini_set('display_errors',1);
@@ -105,7 +105,10 @@ EOF;
 </script>
 
 </form>
-
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootmetro.js"></script>
 </body>
 </html>
 <?php
